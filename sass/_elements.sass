@@ -1,0 +1,135 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+:root
+    --white: #FDFDFD
+    --balck: #141414
+    --gray: #A0A0A0
+
+$black: var(--balck)
+$white: var(--white)
+
+body
+    min-height: 100vh
+    font-size: 16px
+    color: white
+    background: linear-gradient(180deg, #EBA63E 0%, #F68F32 100%)
+    font-family: "Manrope", sans-serif
+    font-optical-sizing: auto
+    font-style: normal
+    position: relative
+    z-index: 1
+
+    &.is_active
+        overflow: hidden
+
+.container
+    max-width: 1600px
+    width: 100%
+    margin: 0 auto
+    padding: 0 50px
+
+main
+    padding-top: 90px
+    @media screen and ( max-width: 720px )
+        padding-top: 76px
+
+img
+    display: block
+    max-width: 100%
+
+.ic
+    display: inline-block
+    vertical-align: middle
+    width: 55px
+    height: 55px
+    border-radius: 50%
+    background-color: $black
+    img
+        display: block
+
+.box
+    background-color: $white
+    padding: 19px
+    border-radius: 35px
+    width: 318px
+    aspect-ratio: 1/1
+    &-head
+        gap: 10px
+
+    &__heading
+        font-weight: 500
+        font-size: 24px
+        line-height: 32.78px
+
+    &__text
+        font-size: 14px
+        line-height: 19.12px
+
+    &__big
+        font-size: 128px
+        line-height: 174.85px
+        font-weight: 800
+        white-space: nowrap
+        i
+            font-size: 64px
+            font-style: normal
+            line-height: 87.42px
+
+    & > *
+        &:nth-child(2)
+            margin: auto
+
+.link
+    color: #279CFF
+    font-size: 14px
+    line-height: 19px
+    gap: 5px
+
+a,
+button
+    color: white
+    text-decoration: none
+    transition: all ease .3s
+    background-color: transparent
+    &:hover
+        opacity: .8
+        img
+            filter: none !important
+            opacity: 1 !important
+
+    &:active
+        opacity: 1
+        transform: scale(.98)
+
+ul
+    list-style: none
+
+.fx, .fx-w, .fx-ac, .fx-as, .fx-col, .fx-jb, .fx-ae, .ic, .box
+    display: flex
+
+.fx-ac, .ic
+    align-items: center
+
+.fx-jc, .ic
+    justify-content: center
+
+.fx-col, .box
+    flex-direction: column
+
+.fx
+    &-w
+        flex-wrap: wrap
+
+    &-as
+        align-items: flex-start
+
+    &-jb
+        justify-content: space-between
+
+    &-ae
+        align-items: end
