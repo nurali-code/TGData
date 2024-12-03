@@ -1,6 +1,39 @@
 @import 'normolize'
 @import 'elements'
 @import 'header'
+@import 'footer'
+
+.box
+    background-color: $white
+    padding: 19px
+    border-radius: 35px
+    width: 318px
+    aspect-ratio: 1/1
+    &-head
+        gap: 10px
+
+    &__heading
+        font-weight: 500
+        font-size: 24px
+        line-height: 32.78px
+
+    &__text
+        font-size: 14px
+        line-height: 19.12px
+
+    &__big
+        font-size: 128px
+        line-height: 174.85px
+        font-weight: 800
+        white-space: nowrap
+        i
+            font-size: 64px
+            font-style: normal
+            line-height: 87.42px
+
+    & > *
+        &:nth-child(2)
+            margin: auto
 
 .hero
     color: $black
@@ -17,5 +50,20 @@
         &:last-child
             max-width: 67%
 
-        .box 
+        .box
             width: 31%
+
+.cloud
+    margin-top: auto
+    background-color: $black
+    padding: 170px 0
+    .fx-ac
+        gap: 120px
+    .col
+        width: 73%
+        &:last-child
+            width: 27%
+
+    p
+        font-size: 14px
+        line-height: 19.14px
