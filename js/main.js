@@ -1,38 +1,57 @@
 var options = {
-    series: [35, 10, 30],
-    labels: ['Mans', 'Woman', 'Unknown'],
+    series: [10, 30, 35],
     colors: ['#279CFF', '#FE5858', '#91E50B'],
-    chart: { type: 'donut', },
-    dataLabels: { enabled: false },
+    labels: ['Mans', 'Woman', 'Unknown'],
+    chart: {
+        fontFamily: 'Manrope',
+        type: 'donut', width: '240px', height: '240px',
+    },
+    dataLabels: {
+        enabled: true,
+        // "style": {
+        //     "fontSize": 15,
+        //     "fontWeight": 500
+        // },
+    },
+
     legend: { position: 'bottom', },
-    // chart: { width: '100%' }
-};
-var chart = new ApexCharts(document.querySelector("#gender"), options);
+    plotOptions: {
+        pie: {
+            "donut": { "size": "55%" },
+            startAngle: 20,
+            endAngle: 380
+        }
+
+    },
+}; var chart = new ApexCharts(document.querySelector("#gender"), options);
 chart.render();
 
 var optionsBots = {
-    series: [35, 10, 30],
-    labels: ['Bots', 'Humans', 'Unknown'],
+    series: [10, 30, 35],
+    colors: ['#279CFF', '#FE5858', '#91E50B'],
+    labels: ['Humans', 'Unknown', 'Bots',],
     chart: { type: 'donut', },
     dataLabels: { enabled: false },
     legend: { position: 'bottom', },
-    responsive: [{
-        breakpoint: 100,
-        options: {
-            chart: { width: 200 },
-            legend: { position: 'top' }
+    plotOptions: {
+        pie: {
+            "donut": { "size": "55%" },
+            startAngle: 20,
+            endAngle: 380
         }
-    }]
-};
-var chartBots = new ApexCharts(document.querySelector("#bots"), optionsBots);
+
+    },
+}; var chartBots = new ApexCharts(document.querySelector("#bots"), optionsBots);
 chartBots.render();
 
-
-var options1 = {
-    series: [50],
+var scoreOptions = {
+    series: [59],
     chart: {
         type: 'radialBar',
-        offsetY: -20,
+        fontFamily: 'Manrope',
+        offsetY: -40,
+        width: '100%',
+        height: 500,
         sparkline: {
             enabled: true
         }
@@ -41,20 +60,32 @@ var options1 = {
         radialBar: {
             startAngle: -90,
             endAngle: 90,
-            track: {
-                background: "#FDFDFD",
-                strokeWidth: '100%',
-            },
+            track: { background: "#FDFDFD", },
             dataLabels: {
+                show: true,
                 name: {
-                    show: true
+                    offsetY: -25,
+                    show: true,
+                    color: '#141414',
+                    fontSize: '24px',
+                    fontWeight: 300,
                 },
                 value: {
-                    offsetY: 0,
-                    fontSize: '14px'
+                    offsetY: 50,
+                    formatter: function (val) {
+                        return parseInt(val);
+                    },
+                    color: '#141414',
+                    fontSize: '96px',
+                    fontWeight: 700,
+                    show: true,
                 }
-            }
+            },
         }
+    },
+
+    stroke: {
+        lineCap: 'round'
     },
     grid: {
         padding: {
@@ -63,26 +94,26 @@ var options1 = {
     },
     fill: {
         type: 'gradient',
+        colors: ['#000', '#EBA63E'],
         gradient: {
-            colors: ['#279CFF', '#FE5858', '#91E50B'],
-            shade: 'linear',
-            shadeIntensity: 0.4,
-            inverseColors: false,
+            shade: 'dark',
+            type: 'horizontal',
+            shadeIntensity: 0.5,
+            gradientToColors: ['#EBA63E'],
+            inverseColors: true,
             opacityFrom: 1,
             opacityTo: 1,
             stops: [0, 100]
-        },
+        }
     },
     labels: ['points'],
-};
+}; var score = new ApexCharts(document.querySelector("#score"), scoreOptions);
+score.render();
 
-var chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
-chart1.render();
-
-
-var options2 = {
+var tagsOptions = {
     chart: {
         type: 'treemap',
+        fontFamily: 'Manrope',
         height: 350,
         toolbar: { show: false, },
     },
@@ -100,8 +131,8 @@ var options2 = {
                 { x: 'Гонки', y: 10 },
                 { x: 'Горы', y: 10 },
                 { x: 'Дети', y: 10 },
-                { x: 'VK', y: 5 },
-                { x: 'Коты', y: 5 }
+                { x: 'VK', y: 6 },
+                { x: 'Коты', y: 6 }
             ]
         }
     ],
@@ -121,17 +152,11 @@ var options2 = {
             borderRadius: 35 // Скругление углов
         }
     },
-    dataLabels: {
-        style: {
-            colors: ['#141414']
-        },
-    },
+    dataLabels: { style: { colors: ['#141414'] }, },
     stroke: {
         width: 5, // Ширина линии между элементами
         colors: ['#141414'] // Цвет линии
     }
-
-};
-
-var tags = new ApexCharts(document.querySelector("#tags"), options2);
+}; var tags = new ApexCharts(document.querySelector("#tags"), tagsOptions);
 tags.render();
+

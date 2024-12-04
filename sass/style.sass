@@ -38,6 +38,11 @@
 .hero
     color: $black
     padding: 67px 0 190px
+    #score
+        width: 500px
+        position: absolute
+        bottom: 21%
+        left: -23%
     h1
         font-weight: 600
         font-size: 64px
@@ -45,8 +50,13 @@
         margin: 0 0 30px
 
     .col
+        position: relative
+        z-index: 1
         gap: 27px
         max-width: 33%
+        &:first-child
+            svg
+                overflow: visible !important
         &:last-child
             max-width: 67%
 
@@ -57,12 +67,14 @@
     margin-top: auto
     background-color: $black
     padding: 170px 0
+    .container
+        max-width: 1500px
     .fx-ac
         gap: 120px
     .col
-        width: 73%
+        width: 70%
         &:last-child
-            width: 27%
+            width: 29%
 
     p
         font-size: 14px
