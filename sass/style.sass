@@ -8,9 +8,10 @@
     padding: 19px
     border-radius: 35px
     width: 318px
-    aspect-ratio: 1/1
+    // aspect-ratio: 1/1
     &-head
         gap: 10px
+        margin-bottom: 10px
 
     &__heading
         font-weight: 500
@@ -40,9 +41,10 @@
     padding: 67px 0 190px
     #score
         width: 500px
-        position: absolute
-        bottom: 21%
-        left: -23%
+        position: relative
+        left: -68px
+        margin: auto
+
     h1
         font-weight: 600
         font-size: 64px
@@ -52,16 +54,32 @@
     .col
         position: relative
         z-index: 1
-        gap: 27px
+        gap: 24px
         max-width: 33%
         &:first-child
             svg
                 overflow: visible !important
+
         &:last-child
             max-width: 67%
 
+    .box
+        width: calc( 33.33% - 16px )
+
+    @media screen and ( max-width: 1500px )
+        padding: 60px 0 140px
+
+        h1
+            margin-bottom: 15px
+        .col
+            &:last-child
+                max-width: 55%
+
+        #score
+            margin-top: 0px
+
         .box
-            width: 31%
+            width: calc( 50% - 12px )
 
 .cloud
     margin-top: auto

@@ -2,16 +2,10 @@ var options = {
     series: [10, 30, 35],
     colors: ['#279CFF', '#FE5858', '#91E50B'],
     labels: ['Mans', 'Woman', 'Unknown'],
+    dataLabels: { enabled: false, },
     chart: {
         fontFamily: 'Manrope',
-        type: 'donut', width: '240px', height: '240px',
-    },
-    dataLabels: {
-        enabled: true,
-        // "style": {
-        //     "fontSize": 15,
-        //     "fontWeight": 500
-        // },
+        type: 'donut', width: '230px', height: '230px',
     },
 
     legend: { position: 'bottom', },
@@ -29,8 +23,11 @@ chart.render();
 var optionsBots = {
     series: [10, 30, 35],
     colors: ['#279CFF', '#FE5858', '#91E50B'],
-    labels: ['Humans', 'Unknown', 'Bots',],
-    chart: { type: 'donut', },
+    labels: ['Humans', 'Unknown', 'Bots'],
+    chart: {
+        fontFamily: 'Manrope',
+        type: 'donut', width: '230px', height: '230px',
+    },
     dataLabels: { enabled: false },
     legend: { position: 'bottom', },
     plotOptions: {
