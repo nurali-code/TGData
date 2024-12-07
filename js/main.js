@@ -1,13 +1,16 @@
+document.querySelector('.btn__menu').addEventListener('click', () =>
+    document.querySelectorAll('.nav, .btn__menu, body').forEach(el => el.classList.toggle('is_active'))
+);
+
 var options = {
     series: [10, 30, 35],
     colors: ['#279CFF', '#FE5858', '#91E50B'],
     labels: ['Mans', 'Woman', 'Unknown'],
-    dataLabels: { enabled: false, },
+    dataLabels: { enabled: true, },
     chart: {
         fontFamily: 'Manrope',
-        type: 'donut', width: '230px', height: '230px',
+        type: 'donut', width: '240px', height: '240px',
     },
-
     legend: { position: 'bottom', },
     plotOptions: {
         pie: {
@@ -26,9 +29,9 @@ var optionsBots = {
     labels: ['Humans', 'Unknown', 'Bots'],
     chart: {
         fontFamily: 'Manrope',
-        type: 'donut', width: '230px', height: '230px',
+        type: 'donut', width: '240px', height: '240px',
     },
-    dataLabels: { enabled: false },
+    dataLabels: { enabled: true, },
     legend: { position: 'bottom', },
     plotOptions: {
         pie: {
@@ -53,6 +56,14 @@ var scoreOptions = {
             enabled: true
         }
     },
+    responsive: [{
+        breakpoint: 480,
+        options: {
+            chart: {
+                width: '100%'
+            },
+        }
+    }],
     plotOptions: {
         radialBar: {
             startAngle: -90,
@@ -85,20 +96,18 @@ var scoreOptions = {
         lineCap: 'round'
     },
     grid: {
-        padding: {
-            top: -10
-        }
+        padding: { top: -10 }
     },
     fill: {
         type: 'gradient',
-        colors: ['#000', '#EBA63E'],
+        colors: ['#000', '#ffba52'],
         gradient: {
             shade: 'dark',
             type: 'horizontal',
             shadeIntensity: 0.5,
-            gradientToColors: ['#EBA63E'],
+            gradientToColors: ['#ffba52'],
             inverseColors: true,
-            opacityFrom: 1,
+            opacityFrom: .8,
             opacityTo: 1,
             stops: [0, 100]
         }
@@ -111,15 +120,23 @@ var tagsOptions = {
     chart: {
         type: 'treemap',
         fontFamily: 'Manrope',
-        height: 350,
+        height: 400,
         toolbar: { show: false, },
     },
+    responsive: [{
+        breakpoint: 480,
+        options: {
+            chart: {
+                height: 640,
+            },
+        }
+    }],
     series: [
         {
             data: [
                 { x: 'Автомобили', y: 60 },
-                { x: 'Крипта', y: 50 },
-                { x: 'Ozon', y: 40 },
+                { x: 'Крипта', y: 40 },
+                { x: 'Ozon', y: 45 },
                 { x: 'Спорт', y: 30 },
                 { x: 'ЖК Утесов', y: 45 },
                 { x: 'Халява', y: 25 },
@@ -146,14 +163,17 @@ var tagsOptions = {
                     }
                 ]
             },
-            borderRadius: 35 // Скругление углов
+            borderRadius: 25
         }
     },
-    dataLabels: { style: { colors: ['#141414'] }, },
+    dataLabels: {
+        style: { colors: ['#141414'] },
+    },
     stroke: {
         width: 5, // Ширина линии между элементами
         colors: ['#141414'] // Цвет линии
-    }
+    },
+
 }; var tags = new ApexCharts(document.querySelector("#tags"), tagsOptions);
 tags.render();
 

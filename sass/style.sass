@@ -4,7 +4,7 @@
 @import 'footer'
 
 .box
-    background-color: $white
+    background-color: #fff
     padding: 19px
     border-radius: 35px
     width: 318px
@@ -44,12 +44,13 @@
         position: relative
         left: -68px
         margin: auto
+        bottom: 20px
 
     h1
         font-weight: 600
         font-size: 64px
         line-height: 87px
-        margin: 0 0 30px
+        margin: 0 0
 
     .col
         position: relative
@@ -71,12 +72,14 @@
 
         h1
             margin-bottom: 15px
+
         .col
             &:last-child
                 max-width: 55%
 
         #score
             margin-top: 0px
+            bottom: auto
 
         .box
             width: calc( 50% - 12px )
@@ -90,8 +93,7 @@
             gap: 30px
 
         .box
-            width: 100%
-            max-width: 100%
+            width: calc( 50% - 15px)
 
         h1
             font-size: 48px
@@ -99,9 +101,19 @@
             margin: 0
 
         #score
-            margin-bottom: 20px
+            margin: 0 0 20px
             left: 50%
             transform: translateX(-50%)
+
+    @media screen and ( max-width: 720px )
+        .box
+            width: 100%
+            max-width: 340px
+            margin: 0 auto
+
+        #score 
+            width: 115vw
+
 
 .cloud
     margin-top: auto
@@ -112,6 +124,9 @@
 
     .col
         width: 67%
+        &:first-child
+            color: $black 
+
         &:last-child
             width: 29%
 
